@@ -1,0 +1,4 @@
+2019-05-22 11:35:10,383 - selenium - ERROR - testHome  - 41 - 测试用例执行失败：切换至login页面
+
+2019-05-22 11:35:20,833 - selenium - ERROR - testLogin  - 86 - 测试用例执行失败:登录成功
+
