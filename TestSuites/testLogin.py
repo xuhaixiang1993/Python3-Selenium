@@ -33,7 +33,7 @@ class TestLogin(unittest.TestCase):
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
             log1.info("测试用例执行成功:%s" % case_name + '\n')
-        except BaseException:
+        except AssertionError:
             log1.error("测试用例执行失败:%s" % case_name + '\n')
             raise
 
@@ -49,7 +49,7 @@ class TestLogin(unittest.TestCase):
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
             log1.info("测试用例执行成功:%s" % case_name + '\n')
-        except BaseException:
+        except AssertionError:
             log1.error("测试用例执行失败:%s" % case_name + '\n')
             raise
 
@@ -65,7 +65,7 @@ class TestLogin(unittest.TestCase):
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
             log1.info("测试用例执行成功:%s" % case_name + '\n')
-        except BaseException:
+        except AssertionError:
             log1.error("测试用例执行失败:%s" % case_name + '\n')
             raise
 
@@ -82,6 +82,6 @@ class TestLogin(unittest.TestCase):
         try:
             self.assertEqual(login_title, 'GitHub')
             log1.info("测试用例执行成功:%s" % case_name+'\n')
-        except BaseException:
+        except AssertionError:
             log1.error("测试用例执行失败:%s" % case_name+'\n')
             raise
