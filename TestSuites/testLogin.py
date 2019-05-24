@@ -26,9 +26,7 @@ class TestLogin(unittest.TestCase):
         case_name = '用户为空'
         log1.info("执行测试用例：%s" % case_name)
         login = LoginPage(self.driver)
-        login.type_username('')
-        login.type_password('111')
-        login.click_sign()
+        login.login(' ', '12324')
         error_text = login.get_login_error()
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
@@ -42,9 +40,7 @@ class TestLogin(unittest.TestCase):
         case_name = '密码为空'
         log1.info("执行测试用例：%s" % case_name)
         login = LoginPage(self.driver)
-        login.type_username('xuhaixiang1993')
-        login.type_password('')
-        login.click_sign()
+        login.login('xuhaixiang1993', '')
         error_text = login.get_login_error()
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
@@ -58,9 +54,7 @@ class TestLogin(unittest.TestCase):
         case_name = '密码不正确'
         log1.info("执行测试用例：%s" % case_name)
         login = LoginPage(self.driver)
-        login.type_username('xuhaixiang1993')
-        login.type_password('1233423')
-        login.click_sign()
+        login.login('xuhaixiang1993', ' 12314')
         error_text = login.get_login_error()
         try:
             self.assertEqual(error_text, 'Incorrect username or password.')
@@ -75,9 +69,7 @@ class TestLogin(unittest.TestCase):
         case_name = '登录成功'
         log1.info("执行测试用例：%s" % case_name)
         login = LoginPage(self.driver)
-        login.type_username('password')
-        login.type_password('username')
-        login.click_sign()
+        login.login('username', 'password')
         login_title = login.get_title()
         try:
             self.assertEqual(login_title, 'GitHub')
