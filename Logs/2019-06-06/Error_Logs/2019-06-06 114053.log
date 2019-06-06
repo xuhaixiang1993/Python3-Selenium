@@ -1,0 +1,5 @@
+2019-06-06 11:40:53,979 - selenium - ERROR - logTest  - 8 - test
+Traceback (most recent call last):
+  File "C:/Users/DG02/PycharmProjects/SeleniumTestDemo/Common/logTest.py", line 5, in <module>
+    r = 10/0
+ZeroDivisionError: division by zero

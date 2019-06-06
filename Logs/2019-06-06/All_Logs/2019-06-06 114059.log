@@ -1,0 +1,8 @@
+2019-06-06 11:40:59,810 - selenium - INFO - 新增section：selenium
+2019-06-06 11:40:59,811 - selenium - INFO - 在section：selenium下新增username=测试
+2019-06-06 11:40:59,811 - selenium - INFO - 在section：selenium下新增password=一下
+2019-06-06 11:40:59,813 - selenium - INFO - 在section：selenium下读取username的值
+2019-06-06 11:40:59,813 - selenium - INFO - 在section：selenium下读取password的值
+2019-06-06 11:40:59,813 - selenium - INFO - 删除section:selenium下usrename和他的值
+2019-06-06 11:40:59,814 - selenium - INFO - 删除section:selenium下password和他的值
+2019-06-06 11:40:59,815 - selenium - INFO - 删除section:selenium

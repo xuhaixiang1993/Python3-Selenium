@@ -1,0 +1,9 @@
+2019-06-06 11:40:16,292 - selenium - INFO - 在section：environment下读取browser的值
+2019-06-06 11:40:16,292 - selenium - INFO - 读取浏览器配置,值为chrome
+2019-06-06 11:40:16,292 - selenium - INFO - 在section：environment下读取url的值
+2019-06-06 11:40:16,293 - selenium - INFO - 读取url,值为https://github.com/
+2019-06-06 11:40:18,528 - selenium - INFO - 打开chrome浏览器
+2019-06-06 11:40:19,996 - selenium - INFO - 访问url
+2019-06-06 11:40:21,121 - selenium - INFO - 浏览器最大化
+2019-06-06 11:40:21,122 - selenium - INFO - 设置静态等待时间10秒
+2019-06-06 11:40:21,507 - selenium - INFO - 截图保存成功

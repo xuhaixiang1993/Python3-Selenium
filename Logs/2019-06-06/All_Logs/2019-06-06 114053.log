@@ -1,0 +1,7 @@
+2019-06-06 11:40:53,978 - selenium - INFO - ¿ªÊ¼²âÊÔ
+2019-06-06 11:40:53,979 - selenium - ERROR - test
+Traceback (most recent call last):
+  File "C:/Users/DG02/PycharmProjects/SeleniumTestDemo/Common/logTest.py", line 5, in <module>
+    r = 10/0
+ZeroDivisionError: division by zero
+2019-06-06 11:40:53,979 - selenium - INFO - end

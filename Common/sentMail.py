@@ -7,8 +7,8 @@ from email.utils import formataddr
 from email.mime.multipart import MIMEMultipart
 
 import getcwd
-from Config.config import Config
-from Logs.log import log1
+from Common.config import Config
+from Common.log import log1
 
 
 config = Config()

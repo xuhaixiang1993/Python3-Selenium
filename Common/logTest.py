@@ -1,4 +1,4 @@
-from Logs.log import log1
+from Common.log import log1
 
 try:
     log1.info('开始测试')

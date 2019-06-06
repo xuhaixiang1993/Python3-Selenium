@@ -1,14 +1,15 @@
 import os
 import configparser
 
-from Logs.log import log1
 import getcwd
+from Common.log import log1
+from Common.configOverWriter import ConfigOverWrite
 
 path = getcwd.get_cwd()
 # 配置文件路径
-config_path = os.path.join(path, 'Config/config.ini')
+config_path = os.path.join(path, 'config.ini')
 # 初始化操作配置文件实例
-config = configparser.ConfigParser()
+config = ConfigOverWrite()
 # 读取配置文件
 config.read(config_path, encoding='utf-8-sig')
 

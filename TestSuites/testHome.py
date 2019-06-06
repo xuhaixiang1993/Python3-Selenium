@@ -1,7 +1,7 @@
 import unittest
 from Common.basePage import BasePage
 from PageObject.homePage import HomePage
-from Logs.log import log1
+from Common.log import log1
 
 
 class TestHome(unittest.TestCase):

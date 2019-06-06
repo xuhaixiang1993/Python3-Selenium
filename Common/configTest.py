@@ -1,4 +1,4 @@
-from Config.config import Config
+from Common.config import Config
 
 
 section = 'selenium'

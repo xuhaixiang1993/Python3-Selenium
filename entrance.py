@@ -3,10 +3,9 @@ import unittest
 import HTMLTestRunnerCN
 
 import getcwd
-from Common.sentMail import sent_mail
 from TestSuites.testHome import TestHome
 from TestSuites.testLogin import TestLogin
-from Logs.log import log1
+from Common.log import log1
 
 
 if __name__ == "__main__":

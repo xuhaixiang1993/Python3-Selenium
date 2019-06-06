@@ -4,8 +4,8 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 
 import getcwd
-from Logs.log import log1
-from Config.config import Config
+from Common.log import log1
+from Common.config import Config
 
 path = getcwd.get_cwd()
 config = Config()
@@ -18,12 +18,24 @@ class BasePage:
 
     def get_img(self):
         """截图"""
-        jt_path = os.path.join(getcwd.get_cwd(), 'img/')
-        rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-        img_name = jt_path+rq+'.png'
-        # noinspection PyBroadException
+        # img文件夹路径
+        img_path = os.path.join(getcwd.get_cwd(), 'img/')
+        # img文件夹不存在，新建该文件夹
+        if not os.path.exists(img_path):
+            os.makedirs(img_path)
+        # 获取当前日期
+        local_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        # 日期文件夹路径
+        date_file_path = os.path.join(img_path,local_date)
+        # 日期文件夹不存在，新建该文件夹
+        if not os.path.exists(date_file_path):
+            os.makedirs(date_file_path)
+        # 截图存放路径
+        local_time = time.strftime('%Y-%m-%d %H%M%S', time.localtime(time.time()))
+        jt_name = local_time+'.png'
+        jt_path = os.path.join(date_file_path, jt_name)
         try:
-            self.driver.get_screenshot_as_file(img_name)
+            self.driver.get_screenshot_as_file(jt_path)
             log1.info('截图保存成功')
         except BaseException:
             log1.error('截图失败', exc_info=1)

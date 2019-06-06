@@ -2,27 +2,39 @@
 import logging
 import time
 import os
-
 import getcwd
 
 
 def get_log(logger_name):
-    # 创建日志器并命名
-    logger = logging.getLogger(logger_name)
-    # 只打印info及以上级别的日志
-    logger.setLevel(logging.INFO)
-
-    # 设置日志存放路径，日志文件名
-    # 获取本地时间，转换为设置的格式
-    rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-    # 设置所有日志和错误日志的存放路径
-    path = getcwd.get_cwd()
-    # 通过getcwd.py文件的绝对路径来拼接日志存放路径
-    all_log_path = os.path.join(path, 'Logs/All_Logs/')
-    error_log_path = os.path.join(path, 'Logs/Error_Logs/')
+    # 获取项目的根目录
+    project_path = getcwd.get_cwd()
+    Logs_path = os.path.join(project_path, 'Logs')
+    # 获取本地时间，转为年-月-日格式
+    local_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+    # 日期文件夹路径
+    date_file_path = os.path.join(Logs_path, local_date)
+    # 如果没有日期文件夹，创建该文件夹
+    if not os.path.exists(date_file_path):
+        os.makedirs(date_file_path)
+    # 完整日志存放路径
+    all_log_path = os.path.join(date_file_path, 'All_Logs/')
+    # 如果没有完整日志文件夹，创建该文件夹
+    if not os.path.exists(all_log_path):
+        os.makedirs(all_log_path)
+    # 错误日志存放路径
+    error_log_path = os.path.join(date_file_path, 'Error_Logs/')
+    # 如果没有错误日志文件夹，创建该文件夹
+    if not os.path.exists(error_log_path):
+        os.makedirs(error_log_path)
+    # 获取本地时间，转为年月日时分秒格式
+    local_time = time.strftime('%Y-%m-%d %H%M%S', time.localtime(time.time()))
     # 设置日志文件名
-    all_log_name = all_log_path + rq + '.log'
-    error_log_name = error_log_path + rq + '.log'
+    all_log_name = all_log_path + local_time + '.log'
+    error_log_name = error_log_path + local_time + '.log'
+
+    # 创建一个logger
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
 
     # 创建handler
     # 创建一个handler写入所有日志
@@ -53,4 +65,4 @@ def get_log(logger_name):
     return logger
 
 
-log1 = get_log("selenium")
+log1 = get_log('selenium')
